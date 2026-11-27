@@ -1,17 +1,17 @@
 <script lang="ts">
-	import './layout.css';
-	import favicon from '#lib/assets/favicon.svg';
-	import type { LayoutProps } from './$types';
+	import "./layout.css";
+	import favicon from "#lib/assets/favicon.svg";
+	import type { LayoutProps } from "./$types";
 
 	let { children }: LayoutProps = $props();
 
 	// $derived (state using state): https://svelte.dev/tutorial/svelte/derived-state
-    // console log: $inspect(numbers).with(console.trace); https://svelte.dev/tutorial/svelte/inspecting-state
-    // global state: https://svelte.dev/tutorial/svelte/universal-reactivity
-    // $props (leggere parametri componente): https://svelte.dev/tutorial/svelte/declaring-props
-    // props non obbligatori, metti let { a = "valoreDefault"} = $props();: https://svelte.dev/tutorial/svelte/default-values
-    // passare tutti parametri come obj <Comp {...objParams}>: https://svelte.dev/tutorial/svelte/spread-props
-    // #if, else, elseif, each as, each as index
+	// console log: $inspect(numbers).with(console.trace); https://svelte.dev/tutorial/svelte/inspecting-state
+	// global state: https://svelte.dev/tutorial/svelte/universal-reactivity
+	// $props (leggere parametri componente): https://svelte.dev/tutorial/svelte/declaring-props
+	// props non obbligatori, metti let { a = "valoreDefault"} = $props();: https://svelte.dev/tutorial/svelte/default-values
+	// passare tutti parametri come obj <Comp {...objParams}>: https://svelte.dev/tutorial/svelte/spread-props
+	// #if, else, elseif, each as, each as index
 	// keyed each:: https://svelte.dev/tutorial/svelte/keyed-each-blocks
 	// await: https://svelte.dev/tutorial/svelte/await-blocks
 	// per gli events metti on prima quindi onclick al posto di click https://svelte.dev/tutorial/svelte/dom-events
@@ -20,7 +20,7 @@
 	// classi possono avere ternary all'interno: https://svelte.dev/tutorial/svelte/classes
 	// style:nomeCss={ternary?"":""} oppure anche direttamente la stringa: https://svelte.dev/tutorial/svelte/styles
 	// transizioni import { } from "svelte/transition" poi usi nei div transition:fade per esempio: https://svelte.dev/tutorial/svelte/transition
-	// fade (trasparenza), 
+	// fade (trasparenza),
 	// fly (si sposta, usa x, y,duration): https://svelte.dev/tutorial/svelte/adding-parameters-to-transitions
 	// due transizione diverse, uscita e entrata, in: e out: ... https://svelte.dev/tutorial/svelte/in-and-out
 	// import {} from "svelte/easing" ti permette di creare animazioni personalizzate in base al tempo:https://svelte.dev/tutorial/svelte/custom-css-transitions
@@ -33,7 +33,6 @@
 	// per valori che cambiano sempre è più bello Spring from svelte/motion perchè puoi decidere stiffness quindi quanto veloce arriva al valore, damping quanto è come una molla quindi va e ritorna finche si stabilizza: https://svelte.dev/tutorial/svelte/springs
 	// bind anche per dimensioni per esempio innerHeight, offsetHeight e width: https://svelte.dev/tutorial/svelte/dimensions
 	// passare valore da child a parent con bind e bindable: let { value = $bindable('') } e <Keypad bind:value={pin}... spiegazione: https://svelte.dev/tutorial/svelte/component-bindings
-
 </script>
 
 <svelte:head>
@@ -41,3 +40,11 @@
 </svelte:head>
 
 {@render children()}
+
+<div>hell</div>
+
+<style>
+	div {
+		@apply bg-slate-500;
+	}
+</style>
