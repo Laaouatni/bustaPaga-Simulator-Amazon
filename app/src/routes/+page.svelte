@@ -1,4 +1,6 @@
 <script lang="ts">
+
+    
     const maxOreAllaSettimanaBeforeStraordinari = 39;
     const mediaNumeroGiorniAllAnno = 364;
     const numeroGiorniAllaSettimana =7;
@@ -35,9 +37,9 @@
     }
 
     type TypeTurnoName = "mattino" | "pomeriggio" | "notte"; 
-    type TypeTurnoIndex = 0 | 1 | 2;
+    type TypeTurnoIndex = 0 | 1 | 2 | 3;
 
-    type TypeTurnpObject= {
+    type TypeTurnoObject= {
         [turnoName in TypeTurnoName]: {
             index: TypeTurnoIndex;
             hours: {
@@ -47,7 +49,7 @@
         };
     };
 
-    const turniObjectInfo: TypeTurnpObject = {
+    const turniObjectInfo: TypeTurnoObject = {
         mattino: {
             index: 0,
             hours: {
@@ -68,19 +70,18 @@
                 start: 22.5,
                 end: 6
             }
-        }
-    }
-
-    type TypeGiorniSettimana = "lunedi" | "martedi" | "mercoledi" | "giovedi" | "venerdi" | "sabato" | "domenica";
-
-    type TypeSettimanaTurniOrdinariArray = {
-        [giornoName in TypeGiorniSettimana]: {
-            selectedTurno: TypeTurnoName;
-        };
+        },
     };
 
-    let settimanaTurniOrdinariArray = new Array(7);
+    const enumGiorniSettimana = ["domenica", "lunedi", "martedi", "mercoledi", "giovedi", "venerdi", "sabato"];
+    
+    type TypePossibleTurniScenarios = TypeTurnoName | "riposo";
+
+    let settimanaTurniOrdinariArray: TypePossibleTurniScenarios[] = new Array(7).forEach(() => {
+        return "riposo";
+    });
 </script>
 
-
-<div></div>
+<main>
+    <div>hello</div>
+</main>
