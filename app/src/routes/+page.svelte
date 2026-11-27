@@ -1,5 +1,32 @@
 <script lang="ts">
-
+    const constantsCalendario = {
+        ore: {
+            maxOreAllaSettimanaBeforeStraordinario: 39,
+            get maxOreAllMeseOrdinario(): number {
+                const oreAllaSettimana = this.maxOreAllaSettimanaBeforeStraordinario;
+                const settimaneAllMese = constantsCalendario.settimane.mediaNumeroSettimaneAlMese;
+                return oreAllaSettimana * settimaneAllMese;
+            },
+        },
+        giorni: {
+            mediaNumeroGiorniAllAnno: 364,
+            numeroGiorniAllaSettimana: 7,
+        },
+        settimane: {
+            get mediaNumeroSettimaneAlAnno(): number {
+                const giorniAnno = constantsCalendario.giorni.mediaNumeroGiorniAllAnno;
+                const giorniSettimana = constantsCalendario.giorni.numeroGiorniAllaSettimana;
+                return giorniAnno/giorniSettimana;
+            },
+            get mediaNumeroSettimaneAlMese(): number {
+                const mesiAllAnno = constantsCalendario.mesi.maxMesiAllAnnoBase;
+                return this.mediaNumeroSettimaneAlAnno/mesiAllAnno;
+            }
+        }, 
+        mesi: {
+            maxMesiAllAnnoBase: 12
+        }
+    }
     
     const maxOreAllaSettimanaBeforeStraordinari = 39;
     const mediaNumeroGiorniAllAnno = 364;
