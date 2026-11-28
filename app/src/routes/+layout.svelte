@@ -41,10 +41,3 @@
 
 {@render children()}
 
-<div>hell</div>
-
-<style>
-	div {
-		@apply bg-slate-500;
-	}
-</style>
