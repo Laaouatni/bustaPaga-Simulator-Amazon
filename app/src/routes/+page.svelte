@@ -31,6 +31,19 @@
     const thisStartOfMonthDate = new Date(thisYear, thisMonth, 1);
     const thisGiornoSettimanaStartMonth = thisStartOfMonthDate.getDay();
     const thisMonthLunghezza = new Date(thisYear, nextMonth, 0).getDate();
+
+    let numGiorniSpecificiThisMese = {
+        0:0,1:0,2:0,3:0,4:0,5:0,6:0
+    };
+
+    for(let i=0; i<thisMonthLunghezza; i++) {
+        const thisDateCheck = new Date(thisYear, thisMonth, i);
+        const thisGiornoSettimana = thisDateCheck.getDay();
+
+        numGiorniSpecificiThisMese[thisGiornoSettimana]++;
+    }
+
+    console.log(numGiorniSpecificiThisMese)
 </script>
 
 <main class="p-4 gap-4 grid">
